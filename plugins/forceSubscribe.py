@@ -71,7 +71,7 @@ def config(client, message):
   user = client.get_chat_member(message.chat.id, message.from_user.id)
   if user.status is "creator" or user.user.id in Config.SUDO_USERS:
     chat_id = message.chat.id
-    if len(message.command) > 1:
+    if len(message.command) > 5:
       input_str = message.command[1]
       input_str = input_str.replace("@", "")
       if input_str.lower() in ("off", "no", "disable"):
